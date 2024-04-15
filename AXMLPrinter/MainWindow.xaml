@@ -1,0 +1,23 @@
+﻿<Window x:Class="AXMLPrinter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AXMLPrinter"
+        mc:Ignorable="d"
+        Title="AXML Printer 3 GUI" Height="445" Width="510" MinWidth="510" MinHeight="445" MaxWidth="510" MaxHeight="445">
+    <Grid>
+        <Label Content="输入文件：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="输出文件：" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputFilePath" HorizontalAlignment="Left" Margin="80,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="OutputFilePath" HorizontalAlignment="Left" Margin="80,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <Button x:Name="SelectInputFileBtn" Content="选择" HorizontalAlignment="Left" Margin="435,13,0,0" VerticalAlignment="Top" Width="50" Click="SelectInputFileBtn_Click"/>
+        <Button x:Name="SelectOutputFileBtn" Content="选择" HorizontalAlignment="Left" Margin="435,53,0,0" VerticalAlignment="Top" Width="50" Click="SelectOutputFileBtn_Click" Visibility="Hidden"/>
+        <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="290" AllowDrop="True" IsUndoEnabled="False" AcceptsReturn="True" IsReadOnly="True"/>
+        <Button x:Name="ViewXmlBtn" Content="查看XML文件" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="95" Click="ViewXmlBtn_Click"/>
+        <Button x:Name="ExportXmlBtn" Content="导出XML文件" HorizontalAlignment="Left" Margin="110,80,0,0" VerticalAlignment="Top" Width="95" Click="ExportXmlBtn_Click"/>
+        <Button x:Name="TJRBtn" Content="Test Jar Run" HorizontalAlignment="Left" Margin="309,80,0,0" VerticalAlignment="Top" Click="TJRBtn_Click" Width="95"/>
+        <Button x:Name="CleanOutputBtn" Content="清空" HorizontalAlignment="Left" Margin="210,80,0,0" VerticalAlignment="Top" Width="95" Click="CleanOutputBtn_Click"/>
+
+    </Grid>
+</Window>
