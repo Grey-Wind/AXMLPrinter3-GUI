@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using AXmlColorBugFix;
+using Microsoft.Win32;
 using System.IO;
 using System.Windows;
 using Run = RunAXML.Run;
@@ -60,7 +61,7 @@ namespace AXMLPrinter
             {
                 // 调用Run类中的ViewXml方法，并将结果显示在输出文本框中
                 string output = Run.ViewXml(InputFilePath.Text);
-                OutputTextBox.Text = output;
+                OutputTextBox.Text = Fix.FixColorBug(output); ;
             }
         }
 
@@ -132,9 +133,6 @@ namespace AXMLPrinter
         {
             // 获取文件路径
             string directory = Path.GetDirectoryName(InputFileName)!;
-
-            // 获取文件名（带扩展名）
-            string fileName = Path.GetFileName(InputFileName);
 
             // 去除文件扩展名
             string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(InputFileName);

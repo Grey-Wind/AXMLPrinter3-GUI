@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# SYSLIB1045: 转换为“GeneratedRegexAttribute”。
+dotnet_diagnostic.SYSLIB1045.severity = none

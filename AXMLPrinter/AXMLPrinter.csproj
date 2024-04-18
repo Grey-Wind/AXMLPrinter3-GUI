@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AXmlColorBugFix\AXmlColorBugFix.csproj" />
     <ProjectReference Include="..\RunAXML\RunAXML.csproj" />
   </ItemGroup>
 
