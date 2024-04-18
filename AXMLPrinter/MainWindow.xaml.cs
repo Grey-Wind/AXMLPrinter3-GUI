@@ -15,6 +15,13 @@ namespace AXMLPrinter
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 选择输入文件的按钮<br></br>
+        /// 会获取到文件的路径<br></br>
+        /// 然后修改输出路径<br></br>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectInputFileBtn_Click(object sender, RoutedEventArgs e)
         {
             // 选择输入文件，返回文件路径和文件名
@@ -25,9 +32,9 @@ namespace AXMLPrinter
             InputFilePath.Text = path;
 
             // 设置输出文件名
-            string outputFileName = InputFilePath.Text + ".output.xml";
+            // string outputFileName = InputFilePath.Text + ".output.xml";
             // 设置输出文件路径文本框的值
-            OutputFilePath.Text = outputFileName;
+            OutputFilePath.Text = GetNewName(InputFilePath.Text);
         }
 
         private void SelectOutputFileBtn_Click(object sender, RoutedEventArgs e)
@@ -119,6 +126,27 @@ namespace AXMLPrinter
             {
                 return ("获取文件路径失败",""); // 返回错误信息
             }
+        }
+
+        private static string GetNewName(string InputFileName)
+        {
+            // 获取文件路径
+            string directory = Path.GetDirectoryName(InputFileName)!;
+
+            // 获取文件名（带扩展名）
+            string fileName = Path.GetFileName(InputFileName);
+
+            // 去除文件扩展名
+            string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(InputFileName);
+
+            // 合并路径和去除扩展名后的文件名
+            string newPath = Path.Combine(directory, fileNameWithoutExtension);
+
+            // 拼接文件名称
+            string outputName = newPath + ".output.xml";
+
+            // 返回名称
+            return outputName;
         }
     }
 }
