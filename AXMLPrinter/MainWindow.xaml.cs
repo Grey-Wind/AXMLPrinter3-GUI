@@ -17,30 +17,41 @@ namespace AXMLPrinter
 
         private void SelectInputFileBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 选择输入文件，返回文件路径和文件名
             (string filePath, _) = SelectFile();
+            // 文件路径
             string path = filePath;
+            // 设置输入文件路径文本框的值
             InputFilePath.Text = path;
 
+            // 设置输出文件名
             string outputFileName = InputFilePath.Text + ".output.xml";
+            // 设置输出文件路径文本框的值
             OutputFilePath.Text = outputFileName;
         }
 
         private void SelectOutputFileBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 选择输出文件，并将文件名赋值给fileName
             (_, string fileName) = SelectFile();
+            // 将文件名赋值给name
             string name = fileName;
+            // 将文件名显示在输入文件路径框中
             InputFilePath.Text = name;
         }
 
         private void ViewXmlBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 如果输入文件路径框为空
             if (string.IsNullOrEmpty(InputFilePath.Text))
             {
+                // 调用Run类中的Test方法，并将结果显示在输出文本框中
                 string ot = Run.Test();
                 OutputTextBox.Text = ot;
             }
             else
             {
+                // 调用Run类中的ViewXml方法，并将结果显示在输出文本框中
                 string output = Run.ViewXml(InputFilePath.Text);
                 OutputTextBox.Text = output;
             }
@@ -48,32 +59,42 @@ namespace AXMLPrinter
 
         private void ExportXmlBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 检查输入文件路径是否为空
             if (string.IsNullOrEmpty(InputFilePath.Text))
             {
                 MessageBox.Show("未输入需转换文件");
             }
+            // 检查输出文件路径是否为空
             if (string.IsNullOrEmpty(OutputFilePath.Text))
             {
                 MessageBox.Show("未输入输出文件");
             }
             else
             {
+                // 调用Run类的ViewXml方法，获取输入文件的XML视图
                 string output = Run.ViewXml(InputFilePath.Text);
+                // 将XML视图显示在输出文本框中
                 OutputTextBox.Text = output;
+                // 调用Run类的ExportXml方法，将输入文件转换为XML文件
                 Run.ExportXml(InputFilePath.Text, OutputFilePath.Text);
             }
         }
 
         private void TJRBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 调用Run类的Test方法，测试运行状态
             string ot = Run.Test();
+            // 将测试结果显示在输出文本框中
             OutputTextBox.Text = ot;
         }
 
         private void CleanOutputBtn_Click(object sender, RoutedEventArgs e)
         {
+            // 清空输出文本框的内容
             OutputTextBox.Clear();
+            // 清空输入文件路径的内容
             InputFilePath.Clear();
+            // 清空输出文件路径的内容
             OutputFilePath.Clear();
         }
 
@@ -96,7 +117,7 @@ namespace AXMLPrinter
             }
             else
             {
-                return ("获取文件路径失败","");
+                return ("获取文件路径失败",""); // 返回错误信息
             }
         }
     }
