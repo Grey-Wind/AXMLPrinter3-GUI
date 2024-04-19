@@ -16,8 +16,9 @@
         <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="290" AllowDrop="True" IsUndoEnabled="False" AcceptsReturn="True" IsReadOnly="True"/>
         <Button x:Name="ViewXmlBtn" Content="查看XML文件" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="95" Click="ViewXmlBtn_Click"/>
         <Button x:Name="ExportXmlBtn" Content="导出XML文件" HorizontalAlignment="Left" Margin="110,80,0,0" VerticalAlignment="Top" Width="95" Click="ExportXmlBtn_Click"/>
-        <Button x:Name="TJRBtn" Content="Test Jar Run" HorizontalAlignment="Left" Margin="309,80,0,0" VerticalAlignment="Top" Click="TJRBtn_Click" Width="95"/>
+        <Button x:Name="TJRBtn" Content="Test Jar Run" HorizontalAlignment="Left" Margin="410,80,0,0" VerticalAlignment="Top" Click="TJRBtn_Click" Width="75"/>
         <Button x:Name="CleanOutputBtn" Content="清空" HorizontalAlignment="Left" Margin="210,80,0,0" VerticalAlignment="Top" Width="95" Click="CleanOutputBtn_Click"/>
+        <Button x:Name="MultiFileBtn" Content="多文件转换" HorizontalAlignment="Left" Margin="310,80,0,0" VerticalAlignment="Top" Width="95" Click="MultiFileBtn_Click"/>
 
     </Grid>
 </Window>

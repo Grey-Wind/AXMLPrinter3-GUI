@@ -178,5 +178,14 @@ namespace AXMLPrinter
             // 返回名称
             return outputName;
         }
+
+        private void MultiFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MultiFile multiFile = new();
+
+            Close();
+
+            multiFile?.Show();
+        }
     }
 }
