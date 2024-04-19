@@ -9,8 +9,8 @@
     <Grid>
         <Label Content="输入文件：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="输出文件：" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="InputFilePath" HorizontalAlignment="Left" Margin="80,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="OutputFilePath" HorizontalAlignment="Left" Margin="80,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="InputFilePath" HorizontalAlignment="Left" Margin="80,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" IsReadOnly="True"/>
+        <TextBox x:Name="OutputFilePath" HorizontalAlignment="Left" Margin="80,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" IsReadOnly="True"/>
         <Button x:Name="SelectInputFileBtn" Content="选择" HorizontalAlignment="Left" Margin="435,13,0,0" VerticalAlignment="Top" Width="50" Click="SelectInputFileBtn_Click"/>
         <Button x:Name="SelectOutputFileBtn" Content="选择" HorizontalAlignment="Left" Margin="435,53,0,0" VerticalAlignment="Top" Width="50" Click="SelectOutputFileBtn_Click" Visibility="Hidden"/>
         <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="290" AllowDrop="True" IsUndoEnabled="False" AcceptsReturn="True" IsReadOnly="True"/>
