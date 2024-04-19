@@ -38,6 +38,12 @@ namespace AXMLPrinter
             OutputFilePath.Text = GetNewName(InputFilePath.Text);
         }
 
+        /// <summary>
+        /// 选择输出文件的按钮<br></br>
+        /// 会获取到文件的路径<br></br>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectOutputFileBtn_Click(object sender, RoutedEventArgs e)
         {
             // 选择输出文件，并将文件名赋值给fileName
@@ -48,23 +54,33 @@ namespace AXMLPrinter
             InputFilePath.Text = name;
         }
 
+        /// <summary>
+        /// 根据输入文件路径的内容来执行AXML<br></br>
+        /// 把输出显示到输出文本框中<br></br>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ViewXmlBtn_Click(object sender, RoutedEventArgs e)
         {
             // 如果输入文件路径框为空
             if (string.IsNullOrEmpty(InputFilePath.Text))
             {
                 // 调用Run类中的Test方法，并将结果显示在输出文本框中
-                string ot = Run.Test();
-                OutputTextBox.Text = ot;
+                OutputTextBox.Text = Run.Test();
             }
             else
             {
                 // 调用Run类中的ViewXml方法，并将结果显示在输出文本框中
-                string output = Run.ViewXml(InputFilePath.Text);
-                OutputTextBox.Text = Fix.FixColorBug(output); ;
+                OutputTextBox.Text = Fix.FixColorBug(Run.ViewXml(InputFilePath.Text)); ;
             }
         }
 
+        /// <summary>
+        /// 根据输入文件路径与输出文件路径来转换AXml文件<br></br>
+        /// 先显示再转换<br></br>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExportXmlBtn_Click(object sender, RoutedEventArgs e)
         {
             // 检查输入文件路径是否为空
@@ -79,15 +95,18 @@ namespace AXMLPrinter
             }
             else
             {
-                // 调用Run类的ViewXml方法，获取输入文件的XML视图
-                string output = Run.ViewXml(InputFilePath.Text);
                 // 将XML视图显示在输出文本框中
-                OutputTextBox.Text = output;
+                OutputTextBox.Text = Fix.FixColorBug(Run.ViewXml(InputFilePath.Text));
                 // 调用Run类的ExportXml方法，将输入文件转换为XML文件
                 Run.ExportXml(InputFilePath.Text, OutputFilePath.Text);
             }
         }
 
+        /// <summary>
+        /// 普通启动AXML Printer 3<br></br>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TJRBtn_Click(object sender, RoutedEventArgs e)
         {
             // 调用Run类的Test方法，测试运行状态
@@ -96,6 +115,11 @@ namespace AXMLPrinter
             OutputTextBox.Text = ot;
         }
 
+        /// <summary>
+        /// 清空所有内容<br></br>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CleanOutputBtn_Click(object sender, RoutedEventArgs e)
         {
             // 清空输出文本框的内容
@@ -106,6 +130,11 @@ namespace AXMLPrinter
             OutputFilePath.Clear();
         }
 
+        /// <summary>
+        /// 选择文件的函数<br></br>
+        /// 只能输入.xml文件<br></br>
+        /// </summary>
+        /// <returns>完整文件路径，文件名称</returns>
         private static (string, string) SelectFile()
         {
             OpenFileDialog openFileDialog = new()
@@ -119,8 +148,6 @@ namespace AXMLPrinter
             {
                 string filePath = openFileDialog.FileName; // 获取选定的文件路径
                 string fileName = Path.GetFileName(filePath); // 从完整路径中提取文件名
-                Console.WriteLine(filePath);
-                Console.WriteLine(fileName);
                 return (filePath, fileName); // 返回文件路径和文件名的元组
             }
             else
@@ -129,6 +156,11 @@ namespace AXMLPrinter
             }
         }
 
+        /// <summary>
+        /// 获取待转换文件文件名称并返回输出文件完整路径
+        /// </summary>
+        /// <param name="InputFileName">待转换文件路径</param>
+        /// <returns>输出文件完整路径</returns>
         private static string GetNewName(string InputFileName)
         {
             // 获取文件路径
