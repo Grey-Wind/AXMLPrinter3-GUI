@@ -20,7 +20,7 @@ namespace RunAXML
         public static string Test()
         {
             string command = ".\\jre\\bin\\java.exe -jar AXMLPrinter3.jar";
-            string output = ShellExecutor.Cmd.User.ExecuteCmdCommand(command);
+            string output = ShellExecutor.Cmd.User.ExecuteCmdCommand(command) + "\n\n出现 Usage: AXMLPrinter <binary xml file> 则为正常\n如果没有输出则代表转换核心丢失";
             return output;
         }
     }
