@@ -189,9 +189,9 @@ namespace AXMLPrinter
         {
             MultiFile multiFile = new();
 
-            Close();
-
             multiFile?.Show();
+
+            Close();
         }
     }
 }
