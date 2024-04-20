@@ -8,6 +8,7 @@ namespace AXMLPrinter
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
+    /// 写的很烂
     /// </summary>
     public partial class MainWindow : Window
     {
