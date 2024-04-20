@@ -2,15 +2,14 @@
 {
     public class Export
     {
-        public static void ExportXml(string filePath, string inputText)
+        public static async Task ExportXml(string filePath, string inputText)
         {
-            // 尝试写入文件
             try
             {
-                // 使用 StreamWriter 创建文件并写入内容
+                // 使用异步文件写入操作
                 using (StreamWriter writer = new(filePath))
                 {
-                    writer.WriteLine(inputText);
+                    await writer.WriteLineAsync(inputText);
                 }
 
                 Console.WriteLine("文件已成功创建并写入内容。");

@@ -6,8 +6,7 @@ namespace RunAXML
     {
         public static async Task<string> ViewXml(string inputFile)
         {
-            string output = await ViewAsync(inputFile);
-            return output;
+            return await ViewAsync(inputFile);
         }
 
         public static string Test()

@@ -99,7 +99,7 @@ namespace AXMLPrinter
                 // 调用Run类中的ViewXml方法，并将结果显示在输出文本框中
                 OutputTextBox.Text = Fix.FixColorBug(await Run.ViewXml(InputFilePath.Text));
                 // 调用Run类的ExportXml方法，将输入文件转换为XML文件
-                Export.Export.ExportXml(OutputFilePath.Text, OutputTextBox.Text);
+                await Export.Export.ExportXml(OutputFilePath.Text, OutputTextBox.Text);
             }
         }
 
