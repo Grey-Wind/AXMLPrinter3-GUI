@@ -12,7 +12,7 @@
     <Description>一个AXML Printer 3的基于C# WPF的GUI版本</Description>
     <Company>QingYi-Studio</Company>
     <Authors>Grey-Wind</Authors>
-    <Version>1.0.0</Version>
+    <Version>1.2.0</Version>
     <Title>AXMLPrinter</Title>
     <NeutralLanguage>zh-CN</NeutralLanguage>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
