@@ -3,7 +3,6 @@ using Microsoft.Win32;
 using System.IO;
 using System.Windows;
 using Run = RunAXML.Run;
-using Export;
 
 namespace AXMLPrinter
 {
@@ -180,6 +179,11 @@ namespace AXMLPrinter
             return outputName;
         }
 
+        /// <summary>
+        /// 打开多文件转换窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MultiFileBtn_Click(object sender, RoutedEventArgs e)
         {
             MultiFile multiFile = new();

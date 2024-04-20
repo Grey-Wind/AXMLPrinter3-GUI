@@ -15,6 +15,7 @@
     <Version>1.0.0</Version>
     <Title>AXMLPrinter</Title>
     <NeutralLanguage>zh-CN</NeutralLanguage>
+	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
   </PropertyGroup>
 
   <ItemGroup>
