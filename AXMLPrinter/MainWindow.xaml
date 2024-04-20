@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AXMLPrinter"
         mc:Ignorable="d"
         Title="AXML Printer 3 GUI" Height="445" Width="510" MinWidth="510" MinHeight="445" MaxWidth="510" MaxHeight="445">
     <Grid>

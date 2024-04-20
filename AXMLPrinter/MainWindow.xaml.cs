@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Windows;
 using Run = RunAXML.Run;
+using Export;
 
 namespace AXMLPrinter
 {
@@ -60,7 +61,7 @@ namespace AXMLPrinter
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ViewXmlBtn_Click(object sender, RoutedEventArgs e)
+        private async void ViewXmlBtn_Click(object sender, RoutedEventArgs e)
         {
             // 如果输入文件路径框为空
             if (string.IsNullOrEmpty(InputFilePath.Text))
@@ -71,7 +72,7 @@ namespace AXMLPrinter
             else
             {
                 // 调用Run类中的ViewXml方法，并将结果显示在输出文本框中
-                OutputTextBox.Text = Fix.FixColorBug(Run.ViewXml(InputFilePath.Text)); ;
+                OutputTextBox.Text = Fix.FixColorBug(await Run.ViewXml(InputFilePath.Text));
             }
         }
 
@@ -81,7 +82,7 @@ namespace AXMLPrinter
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ExportXmlBtn_Click(object sender, RoutedEventArgs e)
+        private async void ExportXmlBtn_Click(object sender, RoutedEventArgs e)
         {
             // 检查输入文件路径是否为空
             if (string.IsNullOrEmpty(InputFilePath.Text))
@@ -95,10 +96,10 @@ namespace AXMLPrinter
             }
             else
             {
-                // 将XML视图显示在输出文本框中
-                OutputTextBox.Text = Fix.FixColorBug(Run.ViewXml(InputFilePath.Text));
+                // 调用Run类中的ViewXml方法，并将结果显示在输出文本框中
+                OutputTextBox.Text = Fix.FixColorBug(await Run.ViewXml(InputFilePath.Text));
                 // 调用Run类的ExportXml方法，将输入文件转换为XML文件
-                Run.ExportXml(InputFilePath.Text, OutputFilePath.Text);
+                Export.Export.ExportXml(OutputFilePath.Text, OutputTextBox.Text);
             }
         }
 

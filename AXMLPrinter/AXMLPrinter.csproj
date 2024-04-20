@@ -23,6 +23,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AXmlColorBugFix\AXmlColorBugFix.csproj" />
+    <ProjectReference Include="..\Export\Export.csproj" />
+    <ProjectReference Include="..\Login\Login.csproj" />
+    <ProjectReference Include="..\MultiFileLog\MultiFileLog.csproj" />
+    <ProjectReference Include="..\RunAXml.MultiFile\RunAXml.MultiFile.csproj" />
     <ProjectReference Include="..\RunAXML\RunAXML.csproj" />
   </ItemGroup>
 
