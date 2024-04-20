@@ -96,7 +96,7 @@ namespace AXMLPrinter
             {
                 LogBox.Text = Log.Add(LogBox.Text, "使用同步模式运行\n运行中...");
 
-                BasicRun.Run(InputFolderPath.Text, OutputFolderPath.Text);
+                BasicRun.Run(InputFolderPath.Text, OutputFolderPath.Text); // 不能加 await ，因为这是同步运行
 
                 LogBox.Text = Log.Add(LogBox.Text, "运行结束");
             }
