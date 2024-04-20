@@ -25,15 +25,15 @@
         </Grid>
         <Grid x:Name="ButtonGrid">
             <Button x:Name="RunBtn" Content="运行" HorizontalAlignment="Left" Margin="14,105,0,0" VerticalAlignment="Top" Width="80" Click="RunBtn_Click"/>
-            <Button x:Name="ClearBtn" Content="清空" HorizontalAlignment="Left" Margin="99,105,0,0" VerticalAlignment="Top" Width="80"/>
+            <Button x:Name="ClearBtn" Content="清空" HorizontalAlignment="Left" Margin="99,105,0,0" VerticalAlignment="Top" Width="80" Click="ClearBtn_Click"/>
             <Button x:Name="InputFolderPathBtn" Content="选择输入文件夹" HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="100" Click="InputFolderPathBtn_Click"/>
             <Button x:Name="OutputFolderPathBtn" Content="选择输出文件夹" HorizontalAlignment="Left" Margin="289,105,0,0" VerticalAlignment="Top" Width="100" Click="OutputFolderPathBtn_Click"/>
         </Grid>
         <Grid x:Name="UserLoginGrid">
             <Label Content="用户名：" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="UserNameTextBox" HorizontalAlignment="Left" Margin="16,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
+            <TextBox x:Name="UserNameTextBox" HorizontalAlignment="Left" Margin="16,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" IsReadOnly="True"/>
             <Label Content="密码：" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="UserKeyTextBox" HorizontalAlignment="Left" Margin="16,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
+            <TextBox x:Name="UserKeyTextBox" HorizontalAlignment="Left" Margin="16,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" IsReadOnly="True"/>
         </Grid>
     </Grid>
 </Window>
