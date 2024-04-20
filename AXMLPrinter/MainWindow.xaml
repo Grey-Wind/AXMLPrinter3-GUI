@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="AXML Printer 3 GUI" Height="445" Width="510" MinWidth="510" MinHeight="445" MaxWidth="510" MaxHeight="445">
+        Title="AXML Printer 3 GUI"
+        Height="445" Width="510"
+        MinWidth="510" MinHeight="445"
+        MaxWidth="510" MaxHeight="445">
     <Grid>
         <Label Content="输入文件：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="输出文件：" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
