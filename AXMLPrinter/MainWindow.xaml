@@ -18,6 +18,5 @@
         <Button x:Name="TJRBtn" Content="Test Jar Run" HorizontalAlignment="Left" Margin="410,80,0,0" VerticalAlignment="Top" Click="TJRBtn_Click" Width="75"/>
         <Button x:Name="CleanOutputBtn" Content="清空" HorizontalAlignment="Left" Margin="210,80,0,0" VerticalAlignment="Top" Width="95" Click="CleanOutputBtn_Click"/>
         <Button x:Name="MultiFileBtn" Content="多文件转换" HorizontalAlignment="Left" Margin="310,80,0,0" VerticalAlignment="Top" Width="95" Click="MultiFileBtn_Click"/>
-
     </Grid>
 </Window>
