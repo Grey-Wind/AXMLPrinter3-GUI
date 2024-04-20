@@ -2,7 +2,6 @@
 using MultiFileLog;
 using RunAXml.MultiFile;
 using System.Windows;
-using Windows.Foundation.Metadata;
 
 namespace AXMLPrinter
 {
@@ -52,7 +51,7 @@ namespace AXMLPrinter
         }
 
         /// <summary>
-        /// 选择输出文件夹
+        /// <strong>[已停用]</strong>选择输出文件夹
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -87,16 +86,19 @@ namespace AXMLPrinter
         {
             if(UseAsyncCheckBox.IsChecked == true)
             {
-                LogBox.Text = Log.Add(LogBox.Text, "使用异步模式(Beta)运行");
-                MessageBox.Show("该功能极度不完善，请谨慎使用！不保证数据安全，请做好备份！", "警告!!!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                LogBox.Text = Log.Add(LogBox.Text, "使用异步模式运行\n运行中");
 
-                // TODO: 制作异步模式
                 await BasicRun.RunAsync(InputFolderPath.Text, OutputFolderPath.Text); // 原理是把 BasicRun.Run 异步运行，写的烂得一批，基本上一堆await乱套
+
+                LogBox.Text = Log.Add(LogBox.Text, "运行结束");
             }
             else
             {
                 LogBox.Text = Log.Add(LogBox.Text, "使用同步模式运行\n运行中...");
-                RunSync(InputFolderPath.Text, OutputFolderPath.Text);
+
+                BasicRun.Run(InputFolderPath.Text, OutputFolderPath.Text);
+
+                LogBox.Text = Log.Add(LogBox.Text, "运行结束");
             }
         }
 
@@ -130,11 +132,6 @@ namespace AXMLPrinter
             InputFolderPath.Clear();
             OutputFolderPath.Clear();
             LogBox.Clear();
-        }
-
-        private static void RunSync(string InputFolderPath, string OutputFolderPath)
-        {
-            BasicRun.RunAsync(InputFolderPath, OutputFolderPath);
         }
     }
 }

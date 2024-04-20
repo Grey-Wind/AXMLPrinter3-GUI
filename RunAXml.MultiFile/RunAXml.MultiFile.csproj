@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Tools.Shell" Version="1.4.1" />
+    <PackageReference Include="Tools.Shell" Version="1.4.1">
+      <Aliases>RunShell</Aliases>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AXmlColorBugFix\AXmlColorBugFix.csproj" />
   </ItemGroup>
 
 </Project>
