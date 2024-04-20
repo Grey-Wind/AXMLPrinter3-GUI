@@ -109,7 +109,7 @@ namespace AXMLPrinter
         /// <param name="e"></param>
         private void UseAsyncCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            LogBox.Text = Log.Add(LogBox.Text, "已取消异步模式(Beta)");
+            LogBox.Text = Log.Add(LogBox.Text, "已取消异步模式");
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace AXMLPrinter
         /// <param name="e"></param>
         private void UseAsyncCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            LogBox.Text = Log.Add(LogBox.Text, "已选择异步模式(Beta)");
+            LogBox.Text = Log.Add(LogBox.Text, "已选择异步模式");
         }
 
         /// <summary>
