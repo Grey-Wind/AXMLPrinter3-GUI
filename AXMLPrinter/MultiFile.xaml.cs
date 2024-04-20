@@ -134,12 +134,7 @@ namespace AXMLPrinter
 
         private static void RunSync(string InputFolderPath, string OutputFolderPath)
         {
-            BasicRun.Run(InputFolderPath, OutputFolderPath);
-        }
-
-        private static void RunAsync()
-        {
-            // Nothing
+            BasicRun.RunAsync(InputFolderPath, OutputFolderPath);
         }
     }
 }

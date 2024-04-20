@@ -1,4 +1,6 @@
-﻿namespace RunAXml.MultiFile
+﻿using Login;
+
+namespace RunAXml.MultiFile
 {
     public class BasicRun
     {
@@ -6,16 +8,26 @@
         /// 同步运行AXML
         /// </summary>
         /// <param name="folderPath">输入文件夹路径</param>
-        public static string Run(string inputFolderPath, string outputFolderPath)
+        public static async Task<string> RunAsync(string inputFolderPath, string outputFolderPath, bool Async = false)
         {
             string allFilePath = GetFile(inputFolderPath);
+            
+            if(Async == true)
+            {
+                await ConvertAXml.ConvertAsync(allFilePath, outputFolderPath);
+            }
+            else
+            {
+                ConvertAXml.Convert(allFilePath, outputFolderPath);
+            }
+
             return null!;
         }
 
 
         public static async Task RunAsync(string inputFolderPath, string outputFolderPath)
         {
-            await Task.Run(() => Run(inputFolderPath, outputFolderPath));
+            await Task.Run(() => RunAsync(inputFolderPath, outputFolderPath, true));
         }
 
         private static string GetFile(string folderPath)
