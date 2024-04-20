@@ -2,6 +2,7 @@
 using MultiFileLog;
 using RunAXml.MultiFile;
 using System.Windows;
+using Windows.Foundation.Metadata;
 
 namespace AXMLPrinter
 {
@@ -94,26 +95,51 @@ namespace AXMLPrinter
             }
             else
             {
-                LogBox.Text = Log.Add(LogBox.Text, "使用同步模式运行");
-                BasicRun.Run(InputFolderPath.Text, OutputFolderPath.Text);
+                LogBox.Text = Log.Add(LogBox.Text, "使用同步模式运行\n运行中...");
+                RunSync(InputFolderPath.Text, OutputFolderPath.Text);
             }
         }
 
+        /// <summary>
+        /// 检测是否取消选择异步模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UseAsyncCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             LogBox.Text = Log.Add(LogBox.Text, "已取消异步模式(Beta)");
         }
 
+        /// <summary>
+        /// 检测是否选中异步模式
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UseAsyncCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             LogBox.Text = Log.Add(LogBox.Text, "已选择异步模式(Beta)");
         }
 
+        /// <summary>
+        /// 清空所有内容(不包含用户和密码)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
             InputFolderPath.Clear();
             OutputFolderPath.Clear();
             LogBox.Clear();
+        }
+
+        private static void RunSync(string InputFolderPath, string OutputFolderPath)
+        {
+            BasicRun.Run(InputFolderPath, OutputFolderPath);
+        }
+
+        private static void RunAsync()
+        {
+            // Nothing
         }
     }
 }
